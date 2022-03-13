@@ -1,0 +1,147 @@
+/* -------------- Normalize -------------- */
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* -------------- General Styles -------------- */
+body {
+    background-color: #041C32;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    overflow-x: hidden;
+    width: 100vw;
+}
+
+header {
+    background-color: rgba(255,255,255, 0.2);
+    margin: 1.5rem 0;
+    padding: 1.5rem 0;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+h2 {
+    padding-bottom: 2rem;
+}
+
+a, a:hover, a:visited {
+    text-decoration: none;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    outline: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.hr {
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    margin: 1.5rem 0;
+}
+
+.container {
+    margin: auto;
+    max-width: 1200px;
+    padding: 0 2rem;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.highlight {
+    color: #FB8500;
+}
+
+.link-container {
+    display: flex;
+    padding-bottom: 20px;
+}
+
+.link-button {
+    border: 2px solid #e2e2e2;
+    border-radius: 8px 0 8px 0;
+    color: #e2e2e2;
+    display: inline-block;
+    margin-left: auto;
+    padding: 10px 30px;
+    transition: border .3s ease, color .3s ease, border-radius .3s ease;
+}
+
+.link-button:hover {
+    border: 2px solid #fff;
+    border-radius: 0 8px 0 8px;
+    color: #fff;
+}
+
+/* -------------- MAIN -------------- */
+/* Toggle */
+.toggle {
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.toggle .toggle-title {
+    border: 2px solid #FB8500;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 1.5rem;
+    position: relative;
+    text-align: left;
+    width: 100%;
+}
+
+.toggle .toggle-title h2 {
+    font-size: 1rem;
+}
+
+.toggle .toggle-title::before {
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #f2f2f2;
+    content: '';
+    display: block;
+    height: 0; 
+    position: absolute;
+    right: 1.5rem;
+    transform: rotate(180deg);
+    transition: transform .3s ease;
+    top: 2rem;
+    width: 0; 
+}
+
+.toggle.closed .toggle-title::before {
+    transform: rotate(0deg);
+}
+
+.toggle .toggle-content {
+    height: auto;
+    opacity: 1;
+    padding: 1.5rem;
+    transition: opacity .3s ease, padding .3s ease;
+}
+
+.toggle .toggle-content p {
+    padding: 0.5rem 0;
+}
+
+.toggle .toggle-content ol {
+    padding-left: 1.5rem;
+}
+
+.toggle.closed .toggle-content {
+    height: 0;
+    opacity: 0;
+    padding: 0 1.5rem;
+}
