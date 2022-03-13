@@ -12,6 +12,7 @@ const toggleTexts = (lang) => {
         changeDisplay('es', '');
         changeDisplay('en', 'none');
     }
+    document.documentElement.setAttribute("lang", lang);
 }
 
 document.getElementById("es-btn").addEventListener("click", () => {
