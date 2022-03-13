@@ -5,16 +5,124 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Presentation | FULLSTACK REACT GO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1><span lang="en">Hello</span> <span lang="es">Hola</span></h1>
+    <header>
+        <nav class="container">
+            <h1>Milena G.</h1>
+            <ul>
+                <li lang="en"><a href="#about">About me</a></li>
+                <li lang="es"><a href="#about">Acerca de mí</a></li>
+                <li><a href="#renders">Renders</a></li>
+                <li lang="en"><a href="#contact">Contact</a></li>
+                <li lang="es"><a href="#contact">Contacto</a></li>
+                <li>
+                    <button id="es-btn">Es</button>|
+                    <button id="en-btn">En</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <!-- ---------- Start GREETINGS ---------- -->
+        <section id="greetings">
+            <div class="greeting-container">
+                <h2 lang="en">Hi, I'm Milena!</h2>
+                <p lang="en">Web developer and Blender enthusiast</p>
+                <h2 lang="es">Hola, soy Milena!</h2>
+                <p lang="es">Desarrolladora Web y principiante en Blender</p>
+                <div class="links-container">
+                    <a href="" target="_blank" rel="noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="./assets/avatar.png" alt="Avatar of Milena made in blender">
+            </div>
+        </section>
+        <!-- ---------- End GREETINGS ---------- -->
+        <!-- ---------- Start ABOUT ---------- -->
+        <section id="about">
+            <h3 lang="en">About me</h3>
+            <h3 lang="es">Acerca de mí</h3>
+            <p lang="en">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus egestas molestie erat, quis feugiat quam consectetur elementum. Maecenas pulvinar hendrerit dolor et viverra. Cras vitae vulputate nulla. Aliquam eu urna a enim pulvinar placerat. Vivamus vulputate neque nec finibus laoreet. Fusce et mi a erat cursus ultricies. Ut fermentum mi sit amet sodales bibendum</p>
+            <p lang="es">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus egestas molestie erat, quis feugiat quam consectetur elementum. Maecenas pulvinar hendrerit dolor et viverra. Cras vitae vulputate nulla. Aliquam eu urna a enim pulvinar placerat. Vivamus vulputate neque nec finibus laoreet. Fusce et mi a erat cursus ultricies. Ut fermentum mi sit amet sodales bibendum</p>
+        </section>
+        <!-- ---------- End ABOUT ---------- -->
+        <!-- ---------- Start RENDERS ---------- -->        
+        <section id="renders">
+            <h3>Renders</h3>
+            <div class="render-card" data-image-name="">
+                <div class="see-more-btn"></div>
+            </div>
+            <div class="render-card" data-image-name="">
+                <div class="see-more-btn"></div>
+            </div>
+            <div class="render-card" data-image-name="">
+                <div class="see-more-btn"></div>
+            </div>
+            <div class="render-card" data-image-name="">
+                <div class="see-more-btn"></div>
+            </div>
+            <div class="render-card" data-image-name="">
+                <div class="see-more-btn"></div>
+            </div>
+        </section>
+        <!-- ---------- End RENDERS ---------- -->
+        <!-- ---------- Start CONTACT ---------- -->
+        <section id="contact">
+            <h3 lang="en">Contact</h3>
+            <h3 lang="es">Contacto</h3>
+            <form>
+                <label for="first_name" lang="en">First Name</label>
+                <label for="first_name" lang="es">Nombre</label>
+                <input type="text" id="first_name" name="first_name">
 
-    <p lang="en">English</p>
-    <p lang="es">Spanish</p>
+                <label for="last_name" lang="en">Last Name</label>
+                <label for="last_name" lang="es">Apellido</label>
+                <input type="text" id="last_name" name="last_name">
 
-    <button id="es-btn">Es</button>
-    <button id="en-btn">En</button>
+                <label for="email" lang="en">Email address</label>
+                <label for="email" lang="es">Dirección de Email</label>
+                <input type="email" id="email" name="email">
 
+                <label for="message" lang="en">Your message</label>
+                <label for="message" lang="es">Tu mensaje</label>
+                <textarea id="message" name="message" cols="30" rows="10"></textarea>
+
+                <button type="submit">
+                    <span lang="en">Send</span> 
+                    <span lang="es">Enviar</span>
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </form>
+        </section>
+        <!-- ---------- End CONTACT ---------- -->
+    </main>
+    <footer>
+        <div class="container">
+            <p>Milena G.</p>
+            <nav>
+                <ul>
+                    <li lang="en"><a href="#about">About me</a></li>
+                    <li lang="es"><a href="#about">Acerca de mí</a></li>
+                    <li><a href="#renders">Renders</a></li>
+                    <li lang="en"><a href="#contact">Contact</a></li>
+                    <li lang="es"><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="socials-container">
+                <a href="" target="_blank" rel="noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i></a>
+                <a href="" target="_blank" rel="noreferrer"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
     <script src="./script.js"></script>
 </body>
 </html>
