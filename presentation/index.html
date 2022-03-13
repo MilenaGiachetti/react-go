@@ -14,31 +14,34 @@
 <body>
     <header>
         <nav class="container">
-            <h1>Milena G.</h1>
-            <ul>
+            <h1><a href="#top">Milena G.</a></h1>
+            <ul class="nav-links-container">
                 <li lang="en"><a href="#about">About me</a></li>
                 <li lang="es"><a href="#about">Acerca de mí</a></li>
                 <li><a href="#renders">Renders</a></li>
                 <li lang="en"><a href="#contact">Contact</a></li>
                 <li lang="es"><a href="#contact">Contacto</a></li>
-                <li>
-                    <button id="es-btn">Es</button>|
-                    <button id="en-btn">En</button>
+                <li class="lang-btns-container">
+                    <button id="es-btn">ES</button>
+                    <span>·</span>
+                    <button id="en-btn">EN</button>
                 </li>
             </ul>
         </nav>
     </header>
     <main class="container">
         <!-- ---------- Start GREETINGS ---------- -->
-        <section id="greetings">
+        <section id="greetings" class="greetings">
             <div class="greeting-container">
-                <h2 lang="en">Hi, I'm Milena!</h2>
-                <p lang="en">Web developer and Blender enthusiast</p>
-                <h2 lang="es">Hola, soy Milena!</h2>
-                <p lang="es">Desarrolladora Web y principiante en Blender</p>
-                <div class="links-container">
-                    <a href="" target="_blank" rel="noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i></a>
+                <div class="greeting-content-container">
+                    <h2 lang="en">Hi, I'm Milena!</h2>
+                    <p lang="en">Web developer and Blender enthusiast</p>
+                    <h2 lang="es">Hola, soy Milena!</h2>
+                    <p lang="es">Desarrolladora Web y principiante en Blender</p>
+                    <div class="links-container">
+                        <a href="https://www.linkedin.com/in/milena-giachetti/" target="_blank" rel="noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://github.com/milenagiachetti" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="image-container">
@@ -47,7 +50,7 @@
         </section>
         <!-- ---------- End GREETINGS ---------- -->
         <!-- ---------- Start ABOUT ---------- -->
-        <section id="about">
+        <section id="about" class="about">
             <h3 lang="en">About me</h3>
             <h3 lang="es">Acerca de mí</h3>
             <p lang="en">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus egestas molestie erat, quis feugiat quam consectetur elementum. Maecenas pulvinar hendrerit dolor et viverra. Cras vitae vulputate nulla. Aliquam eu urna a enim pulvinar placerat. Vivamus vulputate neque nec finibus laoreet. Fusce et mi a erat cursus ultricies. Ut fermentum mi sit amet sodales bibendum</p>
@@ -55,50 +58,64 @@
         </section>
         <!-- ---------- End ABOUT ---------- -->
         <!-- ---------- Start RENDERS ---------- -->        
-        <section id="renders">
+        <section id="renders" class="renders">
             <h3>Renders</h3>
-            <div class="render-card" data-image-name="">
-                <div class="see-more-btn"></div>
-            </div>
-            <div class="render-card" data-image-name="">
-                <div class="see-more-btn"></div>
-            </div>
-            <div class="render-card" data-image-name="">
-                <div class="see-more-btn"></div>
-            </div>
-            <div class="render-card" data-image-name="">
-                <div class="see-more-btn"></div>
-            </div>
-            <div class="render-card" data-image-name="">
-                <div class="see-more-btn"></div>
+            <div class="renders-container">
+                <div class="render-card" style="--background:url('./assets/renders/render1.png')">
+                    <div class="see-more-btn"></div>
+                </div>
+                <div class="render-card" style="--background:url('./assets/renders/render4.png')">
+                    <div class="see-more-btn"></div>
+                </div>
+                <div class="render-card" style="--background:url('./assets/renders/render2.png')">
+                    <div class="see-more-btn"></div>
+                </div>
+                <div class="render-card" style="--background:url('./assets/renders/render3.png')">
+                    <div class="see-more-btn"></div>
+                </div>
             </div>
         </section>
         <!-- ---------- End RENDERS ---------- -->
         <!-- ---------- Start CONTACT ---------- -->
-        <section id="contact">
+        <section id="contact" class="contact">
             <h3 lang="en">Contact</h3>
             <h3 lang="es">Contacto</h3>
             <form>
-                <label for="first_name" lang="en">First Name</label>
-                <label for="first_name" lang="es">Nombre</label>
-                <input type="text" id="first_name" name="first_name">
+                <div class="input-siblings">
+                    <div class="input-container">
+                        <input type="text" id="first_name" name="first_name" placeholder=" " required>
+                        <label for="first_name">
+                            <span lang="en">First Name</span>
+                            <span lang="es">Nombre</span>
+                        </label>
+                    </div>
+                    <div class="input-container">
+                        <input type="text" id="last_name" name="last_name" placeholder=" " required>
+                        <label for="last_name">
+                            <span lang="en">Last Name</span>
+                            <span lang="es">Apellido</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <input type="email" id="email" name="email" placeholder=" " required>
+                    <label for="email">
+                        <span lang="en">Email address</span>
+                        <span lang="es">Dirección de Email</span>
+                    </label>
+                </div>
+                <div class="input-container">
+                    <textarea id="message" name="message" placeholder=" " required></textarea>
+                    <label for="message">
+                        <span lang="en">Your message</span>
+                        <span lang="es">Tu mensaje</span>
+                    </label>
+                </div>
 
-                <label for="last_name" lang="en">Last Name</label>
-                <label for="last_name" lang="es">Apellido</label>
-                <input type="text" id="last_name" name="last_name">
-
-                <label for="email" lang="en">Email address</label>
-                <label for="email" lang="es">Dirección de Email</label>
-                <input type="email" id="email" name="email">
-
-                <label for="message" lang="en">Your message</label>
-                <label for="message" lang="es">Tu mensaje</label>
-                <textarea id="message" name="message" cols="30" rows="10"></textarea>
-
-                <button type="submit">
+                <button type="submit" class="submit-btn">
+                    <i class="fa-solid fa-paper-plane"></i>
                     <span lang="en">Send</span> 
                     <span lang="es">Enviar</span>
-                    <i class="fa-solid fa-paper-plane"></i>
                 </button>
             </form>
         </section>
@@ -106,20 +123,23 @@
     </main>
     <footer>
         <div class="container">
-            <p>Milena G.</p>
+            <a href="#top">Milena G.</a>
             <nav>
                 <ul>
                     <li lang="en"><a href="#about">About me</a></li>
                     <li lang="es"><a href="#about">Acerca de mí</a></li>
+                    <li>|</li>
                     <li><a href="#renders">Renders</a></li>
+                    <li>|</li>
                     <li lang="en"><a href="#contact">Contact</a></li>
                     <li lang="es"><a href="#contact">Contacto</a></li>
                 </ul>
             </nav>
             <div class="socials-container">
-                <a href="" target="_blank" rel="noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i></a>
-                <a href="" target="_blank" rel="noreferrer"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/milena-giachetti/" target="_blank" rel="noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/milenagiachetti" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i></a>
+                <a href="mailto:giachettimilena@gmail.com?subject=Contact%20from%20presentation" lang="en" target="_blank" rel="noreferrer"><i class="fa-solid fa-envelope"></i></a>
+                <a href="mailto:giachettimilena@gmail.com?subject=Contacto%20desde%20presentaci%C3%B3n" lang="es" target="_blank" rel="noreferrer"><i class="fa-solid fa-envelope"></i></a>
             </div>
         </div>
     </footer>

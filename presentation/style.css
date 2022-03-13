@@ -1,0 +1,272 @@
+/* -------------- Normalize -------------- */
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* -------------- General Styles -------------- */
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-color: #041C32;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    overflow-x: hidden;
+    width: 100vw;
+}
+header {
+    /* rgba(255,255,255, 0.2) to rgb with the background #041C32 and then .8 opacity*/
+    background-color: rgba(54, 72, 89, 0.7); 
+    margin: 5px;
+    padding: 0.5rem 0;
+    width: 100%;
+    z-index: 2;
+}
+h1 {
+    font-size: 1rem;
+    font-weight: 400;
+}
+h2 {
+    font-size: 3rem;
+    font-weight: 300;
+    padding-bottom: 1rem;
+}
+h3 {
+    padding-bottom: 2rem;
+    position: relative;
+}
+h3:before {
+    background-color: #FB8500;
+    content: '';
+    display: block;
+    height: 2px;
+    position: absolute;
+    right: 0;
+    top: 14px;
+    width: calc(100% - 150px);
+}
+a, a:hover, a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+button {
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    outline: none;
+}
+ul {
+    list-style: none;
+}
+.container {
+    margin: auto;
+    max-width: 1200px;
+    padding: 0 3rem;
+}
+
+/* -------------- HEADER -------------- */
+header{
+    position: fixed;
+    top: 0;
+}
+header nav {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+header nav .nav-links-container {
+    display: flex;
+}
+header nav .nav-links-container li {
+    margin: 0.2rem;
+}
+header nav .nav-links-container li a, 
+header nav .nav-links-container .lang-btns-container {
+    display: block;
+    padding: 0.5rem 1rem;
+}
+header nav .nav-links-container .lang-btns-container button {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* -------------- MAIN -------------- */
+/* -------------- Greetings section -------------- */
+.greetings {
+    align-items: center;
+    display: flex;
+    height: calc(100vh - 120px);
+    justify-content: flex-start;
+    margin-top: 120px;
+    max-height: 800px;
+    position: relative;
+}
+.greetings .greeting-container {
+    background-color: rgba(255,255,255, 0.2);
+    border-radius: 10px;
+    padding: 3rem 1.5rem; 
+    width: 100%;
+}
+.greetings .greeting-container p {
+    font-size: 1.2rem;
+}
+.greetings .greeting-container .greeting-content-container {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+.greetings .greeting-container .greeting-content-container .links-container {
+    margin-left: auto;
+    padding-top: 2rem;
+}
+.greetings .greeting-container .greeting-content-container .links-container a {
+    background-color: #FB8500;
+    border-radius: 50%;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    display: inline-block;
+    font-size: 1.1rem;
+    height: 40px;
+    margin-left: 1rem;
+    padding: 8px 0 0 10px;
+    width: 40px;
+}
+.greetings .greeting-container .greeting-content-container .links-container a:first-child {
+    padding: 8px 0 0 11px;
+}
+.greetings .image-container {
+    height: 100%;
+    position: absolute;
+    right: -1.5rem;
+    top: 0;
+}
+.greetings .image-container img {
+    height: 100%;
+    width: auto;
+}
+
+/* -------------- About section -------------- */
+.about {
+    padding-top: 5rem;
+}
+
+/* -------------- Renders section -------------- */
+.renders {
+    padding-top: 5rem;
+}
+.renders .renders-container {
+    column-gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-bottom: 1rem;
+}
+.renders .renders-container .render-card {
+    background-image: var(--background);
+    background-position: center;
+    background-size: cover;
+    border-radius: 4px;
+    display: inline-block;
+    height: 350px;
+    width: 100%;
+}
+
+/* -------------- Contact section -------------- */
+.contact {
+    padding: 5rem 0;
+}
+.contact form {
+    display: flex;
+    flex-direction: column;
+}
+.contact label {
+    color: #ccc;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    left: 20px;
+    position: absolute;
+    top: 25px;
+    transition: font-size .3s ease, top .3s ease, left .3s ease, color .3s ease;
+}
+.contact .input-siblings {
+    display: flex;
+}
+.contact .input-container {
+    position: relative;
+}
+.contact input, .contact textarea {
+    background-color: rgba(255,255,255, 0.2);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    height: 40px;
+    margin: 1rem 0;
+    outline: none;    
+    padding: 20px;
+    width: 100%;
+}
+.contact input:valid + label, 
+.contact textarea:valid + label,
+.contact input:focus + label, 
+.contact textarea:focus + label,
+.contact input:not(:placeholder-shown) + label, 
+.contact textarea:not(:placeholder-shown) + label {
+    color: #fff;
+    font-size: 12px;
+    left: 10px;
+    top: -4px;
+}
+.contact .input-siblings .input-container {
+    width: 48%;
+}
+.contact .input-siblings .input-container:first-child {
+    margin-right: auto;
+}
+.contact textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+.contact .submit-btn {
+    background-color: #FB8500;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-left: auto;
+    margin-top: 2rem;
+    max-width: 200px;
+    padding: 0.5rem 0;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+.contact .submit-btn .fa-paper-plane {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+}
+
+/* -------------- FOOTER -------------- */
+footer {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 2rem 0;
+}
+footer .container {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+footer .container nav ul li {
+    display: inline-block;
+    font-size: 0.8rem;
+}
+footer .socials-container a{
+    font-size: 1.5rem;
+    padding: 1rem 0.5rem;
+}
+footer .socials-container a:last-child {
+    padding-right: 0;
+}
