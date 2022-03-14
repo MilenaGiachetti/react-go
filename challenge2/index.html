@@ -5,8 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Challenge 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    
+    <header>
+        <div class="container">
+            <h1>Calculadora de áreas</h1>
+        </div>
+    </header>
+    <main class="container">
+        <div class="input-ctn">
+            <label for="shape">Figura sobre la que calcular</label>
+            <select name="shape" id="shape">
+                <option value="">Seleccionar</option>
+                <option value="circle">Círculo</option>
+                <option value="rectangle">Rectángulo</option>
+                <option value="triangle">Triángulo</option>
+            </select>
+        </div>
+        <div class="input-ctn" id="radio-ctn" style="display: none;">
+            <label for="radio">Radio</label>
+            <input type="number" min="0" name="radio" id="radio">
+        </div>
+        <div id="rectangle-ctn" style="display: none;">
+            <div class="input-ctn">
+                <label for="base">Base</label>
+                <input type="number" min="0" name="base" id="base">
+            </div>
+            <div class="input-ctn">
+                <label for="height">Altura</label>
+                <input type="number" min="0" name="height" id="height">
+            </div>
+        </div>
+        <div id="submit-ctn" style="display: none;">
+            <button type="submit" class="submit-button">Enviar</button>
+            <p class="results">El resultado es: <span id="results">...</span></p>
+        </div>
+    </main>
+    <script src="./script.js"></script>
 </body>
 </html>
