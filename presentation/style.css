@@ -23,7 +23,7 @@ header {
     margin: 5px;
     padding: 0.5rem 0;
     width: 100%;
-    z-index: 2;
+    z-index: 3;
 }
 h1 {
     font-size: 1rem;
@@ -87,7 +87,22 @@ ul {
         padding: 0 1.5rem;
     }
 }
-
+.backdrop {
+    background-color: rgba(4, 28, 50, 0.7);
+    height: 0;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    transition: opacity .3s ease;
+    width: 0;
+    z-index: 2;
+}
+.backdrop.backdrop_visible {
+    height: 100vh;    
+    opacity: 1;
+    width: 100vw;
+}
 /* -------------- HEADER -------------- */
 header{
     position: fixed;

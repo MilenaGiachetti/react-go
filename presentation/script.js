@@ -26,14 +26,18 @@ toggleTexts("es");
 
 // NAV
 const navToggle = document.getElementById("nav_toggle");
-navToggle.addEventListener("click", () => {
+const backdrop = document.getElementById("backdrop");
+const toggleNav = () => {
     if(navToggle.classList.contains("nav_toggle-close")) {
         navToggle.setAttribute("aria-label", "Open nav");
     } else {
         navToggle.setAttribute("aria-label", "Close nav");
     }
     navToggle.classList.toggle("nav_toggle-close");
-})
+    backdrop.classList.toggle("backdrop_visible");
+}
+navToggle.addEventListener("click", toggleNav)
+backdrop.addEventListener("click", toggleNav)
 
 // ANIMATIONS with GSAP
 gsap.registerPlugin(ScrollTrigger);
