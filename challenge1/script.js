@@ -39,6 +39,33 @@ const toggleNav = () => {
 navToggle.addEventListener("click", toggleNav)
 backdrop.addEventListener("click", toggleNav)
 
+// MODAL
+const renders = document.getElementsByClassName("render-card");
+const modalContent = document.getElementById("modal_content");
+const modal = document.getElementById("modal");
+const modalClose = document.getElementById("close-button");
+
+for (let i = 0; i < renders.length; i++) {
+    renders[i].addEventListener("click", (e) => {
+        const url = e.target.dataset.url;
+        console.log(url);
+        modalContent.style = `background-image: url('${url}')`;
+        modal.classList.add("modal-open");
+    })
+}
+// modal close handler
+modalContent.addEventListener("click", (e) => {
+    e.stopPropagation();
+})
+
+modal.addEventListener("click", () => {
+    modal.classList.remove("modal-open");
+})
+
+modalClose.addEventListener("click", () => {
+    modal.classList.remove("modal-open");
+})
+
 // ANIMATIONS with GSAP
 gsap.registerPlugin(ScrollTrigger);
 // Greetings section appear animation
