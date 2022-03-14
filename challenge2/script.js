@@ -1,3 +1,5 @@
+const PI = 3.14159265359;
+
 const shapeInput = document.getElementById("shape");
 const radioInputCtn = document.getElementById("radio-ctn");
 const rectangleInputsCtn = document.getElementById("rectangle-ctn");
@@ -37,7 +39,7 @@ submitBtn.addEventListener("click", (e) => {
         case "circle":
             // another way to calculate radio
             // radioResult = +radio.value * +radio.value
-            radioResult = Math.pow(+radio.value, 2);
+            radioResult = PI * Math.pow(+radio.value, 2);
             break;
         case "triangle":
             radioResult = (base.value * height.value) / 2;
