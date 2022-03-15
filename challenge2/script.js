@@ -78,7 +78,7 @@ const calculate = () => {
         default:
             break;
     }
-    results.innerText = radioResult.toFixed(2);
+    results.innerText = radioResult > 0 ? radioResult.toFixed(2) : "...";
 }
 
 submitBtn.addEventListener("click", calculate)
