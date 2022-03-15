@@ -11,6 +11,8 @@ const inputs = document.getElementsByTagName("input");
 const radioInputCtn = document.getElementById("radio-ctn");
 const rectangleInputsCtn = document.getElementById("rectangle-ctn");
 const submitCtn = document.getElementById("submit-ctn");
+// counter
+const counter = document.getElementById("counter");
 
 const cleanInputs = () => {
     for(let i = 0; i < inputs.length; i++) {
@@ -55,6 +57,11 @@ const checkIfPositive = (el) => {
     return true;
 }
 
+const upCounter = () => {
+    let num = counter.innerText;
+    counter.innerText = +num + 1;
+}
+
 const calculate = () => {
     let radioResult = '';
     switch (shapeInput.value) {
@@ -80,7 +87,12 @@ const calculate = () => {
         default:
             break;
     }
-    results.innerText = radioResult > 0 ? radioResult.toFixed(2) : "...";
+    if (radioResult > 0) {
+        results.innerText = radioResult.toFixed(2);
+        upCounter();
+        return;
+    }
+    results.innerText = "...";
 }
 
 submitBtn.addEventListener("click", calculate)
