@@ -116,3 +116,45 @@ gsap.utils.toArray("h3").forEach(el => {
         }
     });
 });
+
+// Projects effects
+const project = document.getElementsByClassName("project");
+
+const makeImageFollow = (e) => {
+    e.target.closest(".project").querySelector(".follow-image").style.left = `${e.clientX - 100}px`;
+    e.target.closest(".project").querySelector(".follow-image").style.top = `${e.clientY - 100}px`;
+}
+
+const createListeners = () => {
+    for (let i = 0; i < project.length; i++) {
+        project[i].addEventListener("mousemove", makeImageFollow)
+    }
+}
+
+const removeListeners = () => {
+    for (let i = 0; i < project.length; i++) {
+        project[i].removeEventListener("mousemove", makeImageFollow)
+    }
+}
+
+let listener;
+
+const checkSizes = (firstCheck = false) => {
+    // it would enter if mobile
+    if (window.innerWidth < 620) {
+        // remove listener if created
+        if (listener) {
+            removeListeners();
+        }
+        listener = false;
+    // it would enter if desktop 
+    // & if firstCheck 
+    // or not previous listener created or removed
+    } else if (firstCheck || !listener) {
+        createListeners();
+        listener = true;
+    }
+}
+
+window.addEventListener("resize", checkSizes);
+checkSizes(true);

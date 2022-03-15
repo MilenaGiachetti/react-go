@@ -318,6 +318,99 @@ header nav .nav-links-container .lang-btns-container button:hover {
 .about {
     padding-top: 5rem;
 }
+.about p {
+    line-height: 1.7rem;
+}
+
+/* -------------- Projects section -------------- */
+.projects {
+    padding-top: 5rem;
+}
+.projects .project {
+    align-self: center;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+}
+@media (max-width: 620px) {
+    .projects .project {
+        padding: 1rem 0;
+    }
+}
+.projects .project h4 {
+    font-size: 1rem;
+    font-weight: 300;
+    padding-top: 10px;
+}
+.projects .project:hover .follow-image {
+    opacity: 1;
+    transition: opacity .3s ease;
+}
+@media (max-width: 620px) {
+    .projects .project .follow-image {
+        display: none;
+    }
+    .projects .project:hover .follow-image {
+        opacity: 0;
+    }
+}
+.projects .project .follow-image {
+    height: 200px;
+    opacity: 0;
+    position: fixed;
+    transition: opacity 1.2s ease;
+    width: 200px;
+    z-index: -1;
+}
+.button-arrow {
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 10px 20px;
+    transition: background-color .3s ease;
+}
+.button-arrow:hover .arrow,
+.button-arrow:hover .arrow:after,
+.button-arrow:hover .arrow:before {
+    background-color: #fff;
+}
+.arrow {
+    background-color: #ccc;
+    display: block;
+    height: 22px;
+    position: relative;
+    transform: rotate(-90deg);
+    transition: transform .3s ease;
+    width: 2px;
+} 
+.arrow:after {
+    background-color: #ccc;
+    bottom: -2px;
+    content: '';
+    display: block;
+    height: 10px;
+    left: -3px;
+    position: absolute;
+    transform: rotate(135deg);
+    width: 2px;
+}  
+.arrow:before {
+    background-color: #ccc;
+    bottom: -2px;
+    content: '';
+    display: block;
+    height: 10px;
+    left: 3px;
+    position: absolute;
+    transform: rotate(-135deg);
+    width: 2px;
+}  
+.button-arrow:hover {
+    background-color: rgba(251, 134, 0, 1);
+}
+.button-arrow:hover .arrow {
+    transform: rotate(-135deg);
+}
 
 /* -------------- Renders section -------------- */
 .renders {
@@ -454,6 +547,9 @@ footer .container {
     align-items: center;
     display: flex;
     justify-content: space-between;
+}
+footer .container nav ul {
+    text-align: center;
 }
 footer .container nav ul li {
     display: inline-block;
