@@ -1,11 +1,26 @@
 const PI = 3.14159265359;
 
+// -------- ELEMENTS --------
+// inputs
 const shapeInput = document.getElementById("shape");
+const radio = document.getElementById("radio");
+const base = document.getElementById("base");
+const height = document.getElementById("height");
+const inputs = document.getElementsByTagName("input");
+// container
 const radioInputCtn = document.getElementById("radio-ctn");
 const rectangleInputsCtn = document.getElementById("rectangle-ctn");
 const submitCtn = document.getElementById("submit-ctn");
 
+const cleanInputs = () => {
+    for(let i = 0; i < inputs.length; i++) {
+        inputs[i].classList.remove("error");
+        inputs[i].value = "";
+    }
+}
+ 
 shapeInput.addEventListener("change", (e) => {
+    cleanInputs();
     switch (e.target.value) {
         case "circle":
             rectangleInputsCtn.style.display = "none";
@@ -27,36 +42,56 @@ shapeInput.addEventListener("change", (e) => {
     results.innerText = "...";
 })
 
+// submit button
 const submitBtn = document.getElementById("submit-ctn");
-const radio = document.getElementById("radio");
-const base = document.getElementById("base");
-const height = document.getElementById("height");
+// results span
 const results = document.getElementById("results");
 
-submitBtn.addEventListener("click", (e) => {
+const checkIfPositive = (el) => {
+    if (+el.value <= 0) {
+        el.classList.add("error")
+        return false;
+    } 
+    return true;
+}
+
+const calculate = () => {
     let radioResult = '';
     switch (shapeInput.value) {
         case "circle":
             // another way to calculate radio
             // radioResult = +radio.value * +radio.value
-            radioResult = PI * Math.pow(+radio.value, 2);
+            if (checkIfPositive(radio)) {
+                radioResult = PI * Math.pow(+radio.value, 2);
+            }
             break;
         case "triangle":
-            radioResult = (base.value * height.value) / 2;
+            if (checkIfPositive(base) || checkIfPositive(height)) {
+                radioResult = (base.value * height.value) / 2;
+            }
             break;
         case "rectangle":   
-            radioResult = base.value * height.value;            
+            if (checkIfPositive(base) || checkIfPositive(height)) {
+                radioResult = base.value * height.value;
+            } 
             break;
         default:
             break;
     }
-    results.innerText = radioResult;
-})
+    results.innerText = radioResult.toFixed(2);
+}
 
-const inputs = document.getElementsByTagName("input");
+submitBtn.addEventListener("click", calculate)
 
 for(let i = 0; i < inputs.length; i++) {
     inputs[i].addEventListener("change", (e) => {
+        e.target.classList.remove("error");
+    })
+    inputs[i].addEventListener("keydown", (e) => {
+        console.log(e);
+        if(e.key === 'Enter') {
+            calculate();
+        }
         e.target.classList.remove("error");
     })
 }
