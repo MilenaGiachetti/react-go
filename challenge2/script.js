@@ -41,7 +41,7 @@ shapeInput.addEventListener("change", (e) => {
             submitCtn.style.display = "none";
             break;
     }
-    results.innerText = "...";
+    results.innerText = "-";
 })
 
 // submit button
@@ -49,9 +49,19 @@ const submitBtn = document.getElementById("submit-ctn");
 // results span
 const results = document.getElementById("results");
 
-const checkIfPositive = (el) => {
-    if (+el.value <= 0) {
-        el.classList.add("error")
+const checkIfValid = (el) => {
+    let num = +el.value;
+    let error;
+    if (!el.value || isNaN(num)) {
+        error = "Ingrese un número válido";
+    } else if (num <= 0) {
+        error = "Ingrese un número positivo mayor a 0";
+    } else if (num > 100) {
+        error = "Ingrese un número entre 0 y 100. El rango supera la capacidad de cálculo";
+    }
+    if (error) {
+        el.classList.add("error");
+        el.parentNode.querySelector(".error-message").innerText = error;
         return false;
     } 
     return true;
@@ -63,24 +73,24 @@ const upCounter = () => {
 }
 
 const calculate = () => {
-    let radioResult = '';
+    let radioResult = "";
     switch (shapeInput.value) {
         case "circle":
             // ways to square a number
             // +radio.value * +radio.value
             // Math.pow(+radio.value, 2)
             // +radio.value ** 2
-            if (checkIfPositive(radio)) {
+            if (checkIfValid(radio)) {
                 radioResult = (+radio.value) ** 2 * PI;
             }
             break;
         case "triangle":
-            if (checkIfPositive(base) || checkIfPositive(height)) {
+            if (checkIfValid(base) && checkIfValid(height)) {
                 radioResult = (base.value * height.value) / 2;
             }
             break;
-        case "rectangle":   
-            if (checkIfPositive(base) || checkIfPositive(height)) {
+        case "rectangle":
+            if (checkIfValid(base) && checkIfValid(height)) {
                 radioResult = base.value * height.value;
             } 
             break;
@@ -93,7 +103,7 @@ const calculate = () => {
         cleanInputs();
         return;
     }
-    results.innerText = "...";
+    results.innerText = "-";
 }
 
 submitBtn.addEventListener("click", calculate)
@@ -102,11 +112,11 @@ for(let i = 0; i < inputs.length; i++) {
     inputs[i].addEventListener("change", (e) => {
         e.target.classList.remove("error");
     })
-    inputs[i].addEventListener("keydown", (e) => {
-        console.log(e);
-        if(e.key === 'Enter') {
+    inputs[i].addEventListener("keyup", (e) => {
+        if (e.key === "Enter") {
             calculate();
+        } else {
+            e.target.classList.remove("error");
         }
-        e.target.classList.remove("error");
     })
 }

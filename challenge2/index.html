@@ -29,24 +29,24 @@
         </div>
         <div class="input-ctn" id="radio-ctn" style="display: none;">
             <label for="radio">Radio</label>
-            <input type="number" min="0" name="radio" id="radio">
-            <p class="error-message">Debe ser un número positivo</p>
+            <input type="number" min="0" max="100" name="radio" id="radio">
+            <p class="error-message">Ingrese un número válido</p>
         </div>
         <div id="rectangle-ctn" style="display: none;">
             <div class="input-ctn">
                 <label for="base">Base</label>
-                <input type="number" min="0" name="base" id="base">
-                <p class="error-message">Debe ser un número positivo</p>
+                <input type="number" min="0" max="100" name="base" id="base">
+                <p class="error-message">Ingrese un número válido</p>
             </div>
             <div class="input-ctn">
                 <label for="height">Altura</label>
-                <input type="number" min="0" name="height" id="height">
-                <p class="error-message">Debe ser un número positivo</p>
+                <input type="number" min="0" max="100" name="height" id="height">
+                <p class="error-message">Ingrese un número válido</p>
             </div>
         </div>
         <div id="submit-ctn" style="display: none;">
             <button type="submit" class="submit-button">Enviar</button>
-            <p class="results">El resultado es: <span id="results">...</span></p>
+            <p class="results">El resultado es: <span id="results">-</span></p>
             <p class="results">Cálculos realizados: <span id="counter">0</span></p>
         </div>
     </main>
