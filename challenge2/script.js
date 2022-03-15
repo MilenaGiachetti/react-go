@@ -59,10 +59,12 @@ const calculate = () => {
     let radioResult = '';
     switch (shapeInput.value) {
         case "circle":
-            // another way to calculate radio
-            // radioResult = +radio.value * +radio.value
+            // ways to square a number
+            // +radio.value * +radio.value
+            // Math.pow(+radio.value, 2)
+            // +radio.value ** 2
             if (checkIfPositive(radio)) {
-                radioResult = PI * Math.pow(+radio.value, 2);
+                radioResult = (+radio.value) ** 2 * PI;
             }
             break;
         case "triangle":
