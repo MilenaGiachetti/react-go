@@ -90,6 +90,7 @@ const calculate = () => {
     if (radioResult > 0) {
         results.innerText = radioResult.toFixed(2);
         upCounter();
+        cleanInputs();
         return;
     }
     results.innerText = "...";
