@@ -69,6 +69,11 @@ ul {
     padding-bottom: 20px;
 }
 
+.link-container p {
+    color: #ccc;
+    padding-top: 12px;
+}
+
 .link-button {
     border: 2px solid #e2e2e2;
     border-radius: 8px 0 8px 0;
