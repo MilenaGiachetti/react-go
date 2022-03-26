@@ -1,0 +1,120 @@
+/* -------------- Normalize -------------- */
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* -------------- General Styles -------------- */
+body {
+    background-color: #041C32;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    overflow-x: hidden;
+    width: 100vw;
+}
+
+header {
+    background-color: rgba(255,255,255, 0.2);
+    margin: 1.5rem 0;
+    padding: 1.5rem 0;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    outline: none;
+}
+
+.container {
+    margin: auto;
+    max-width: 1200px;
+    padding: 0 2rem;
+}
+
+main.container {
+    margin-top: 3rem;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    padding-bottom: 0.5rem;
+}
+
+.input-ctn {
+    position: relative;
+}
+
+input, select {
+    background-color: rgba(255,255,255, 0.2);
+    border: 2px solid transparent;
+    border-radius: 4px;
+    color: #fff;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    height: 40px;
+    margin-bottom: 1.5rem;
+    max-width: 500px;
+    outline: 0;
+    padding: 0 20px;
+    transition: border .3s ease;
+    width: 100%;
+}
+
+input.error {
+    border: 2px solid #fb6400;
+}
+
+.error-message {
+    bottom: 5px;
+    color: #fb6400;
+    display: none;
+    font-size: 13px;
+    position: absolute;
+}
+
+input.error + .error-message {
+    display: block;
+}
+
+select {
+    margin-bottom: 2rem;
+}
+
+select option {
+    color: #041C32;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+
+.submit-button {
+    background-color: #FB8500;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-top: 1rem;
+    max-width: 500px;
+    padding: 0.5rem 0;
+    text-align: center;
+    transition: background-color .3s ease;
+    width: 100%;
+}
+
+.submit-button:hover {
+    background-color: #fb6400;
+}
+
+.results {
+    margin: 2rem 0;
+    max-width: 500px;
+}
+
+.results span {
+    color: #fb6400;
+    font-weight: 700;
+}
